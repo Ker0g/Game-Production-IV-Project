@@ -20,11 +20,11 @@ public class EnemyController : MonoBehaviour
     }
 
     // Update is called once per frame
-    async void Update()
+     void Update()
     {
         if (agent.remainingDistance < 0.5f) 
         {
-            await Task.Delay(1000);
+            //await Task.Delay(1000);
             PatrolToPoint();
         }
             
