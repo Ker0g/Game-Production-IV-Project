@@ -7,7 +7,7 @@ public class ButtonScript : MonoBehaviour
     [SerializeField] InputActionAsset inputActions;
     private InputAction pressAction;
 
-    bool isPressed = false;
+    public bool isPressed = false;
     bool canPress;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
