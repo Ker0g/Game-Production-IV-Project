@@ -16,4 +16,13 @@ public class ExitScript : MonoBehaviour
     {
         
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            // Load the exit scene
+            UnityEngine.SceneManagement.SceneManager.LoadScene(exitSceneName);
+        }
+    }
 }

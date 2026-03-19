@@ -5,6 +5,8 @@ using UnityEngine.AI;
 public class EnemyController : MonoBehaviour
 {
 
+    [SerializeField] FieldOfView fov;
+
     public NavMeshAgent agent;
 
     public Vector3[] positions;
@@ -21,13 +23,32 @@ public class EnemyController : MonoBehaviour
 
     // Update is called once per frame
      void Update()
-    {
-        if (agent.remainingDistance < 0.5f) 
+    { 
+        
+        if (agent.remainingDistance < 0.5f)
         {
             //await Task.Delay(1000);
             PatrolToPoint();
         }
+
+        if (fov.IsTargetVisible(GameObject.FindGameObjectWithTag("Player").transform))
+        {
+            agent.SetDestination(GameObject.FindGameObjectWithTag("Player").transform.position);
+        }
+        //else PatrolToPoint();
+
+       
+
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            Debug.Log("Player caught!");
             
+            UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
+        }
     }
 
 
