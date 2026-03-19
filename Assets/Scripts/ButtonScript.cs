@@ -31,6 +31,15 @@ public class ButtonScript : MonoBehaviour
             isPressed = !isPressed;
             Debug.Log("Button Pressed: " + isPressed);
         }
+        if (isPressed)
+        {
+            gameObject.GetComponent<Renderer>().material.color = Color.green;
+        }
+        else
+        {
+            gameObject.GetComponent<Renderer>().material.color = Color.red;
+        }
+
     }
 
     private void OnTriggerEnter(Collider other)

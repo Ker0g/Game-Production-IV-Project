@@ -17,7 +17,7 @@ public class StartButtons : MonoBehaviour
     public void StartButton()
     {
         // Load the next scene when the button is clicked
-        UnityEngine.SceneManagement.SceneManager.LoadScene("MainScene");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("SampleScene");
     }
 
     public void QuitButton()
