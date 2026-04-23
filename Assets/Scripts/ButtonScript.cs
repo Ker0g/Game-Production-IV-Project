@@ -12,7 +12,7 @@ public class ButtonScript : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        player = GameObject.Find("Player");
+        player = GameObject.Find("PlayerNew");
         pressAction = inputActions.FindAction("Interact");
         if(player)        {
             Debug.Log("Player found: " + player.name);
