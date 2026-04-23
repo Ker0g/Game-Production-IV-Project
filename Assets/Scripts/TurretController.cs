@@ -31,10 +31,6 @@ public class TurretController : MonoBehaviour
               Debug.Log("Player hit!");
               UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
             }
-            //// Rotate turret to face target
-            //Vector3 direction = (GameObject.FindGameObjectWithTag("Player").transform.position - transform.position).normalized;
-            //Quaternion lookRotation = Quaternion.LookRotation(direction);
-            //transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
         }
             else
             {

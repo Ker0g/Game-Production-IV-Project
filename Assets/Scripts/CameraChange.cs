@@ -17,8 +17,6 @@ public class CameraChange : MonoBehaviour
 
     void SwapCamera()
     {
-        //transform.position = positions[nextPos];
-        //transform.eulerAngles = rotations[nextPos];
 
         transform.position = Vector3.Lerp(transform.position, positions[nextPos], 0.5f * Time.deltaTime);
         transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(rotations[nextPos]), 0.5f * Time.deltaTime);

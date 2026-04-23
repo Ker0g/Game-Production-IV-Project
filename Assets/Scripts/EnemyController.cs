@@ -23,7 +23,6 @@ public class EnemyController : MonoBehaviour
         enemies = FindObjectsOfType<EnemyController>();
 
         animator = GetComponent<Animator>();
-        //agent.SetDestination(positions[0]);
         animator.SetInteger("State", 1);
         PatrolToPoint();
     }
@@ -34,7 +33,6 @@ public class EnemyController : MonoBehaviour
         
         if (agent.remainingDistance < 0.5f)
         {
-            //await Task.Delay(1000);
             PatrolToPoint();
         }
 
@@ -55,10 +53,6 @@ public class EnemyController : MonoBehaviour
                 PatrolToPoint();
             }
         }
-        //else PatrolToPoint();
-
-
-
     }
 
     void OnTriggerEnter(Collider other)
